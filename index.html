@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Better Raspored</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+<h1 id="title" >Better Raspored</h1>
+<h4 id="subtitle">A Schedule Maker</h4>
+<button id="bgChange" onclick="bgChange()">
+    <i class="fa-solid fa-moon" style="font-size: 30px; color: gray" ></i>
+</button>
+<h3 id="version" onclick="turnOff(this)">BetterRaspored 0.9</h3>
+<table id="raspored">
+    <thead>
+        <tr>
+            <th style="min-width: 150px"></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+    </thead>
+    <tbody id="Times">
+    <tr>
+        <td class="time">08:00 - 08:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">09:00 - 09:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">10:00 - 10:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">11:00 - 11:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">12:00 - 12:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">13:00 - 13:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">14:00 - 14:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">15:00 - 15:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">16:00 - 16:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">17:00 - 17:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">18:00 - 18:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">19:00 - 19:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+        <td class="time">20:00 - 20:45</td>
+        <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+</tbody>
+</table>
+
+<label class="background" for="selectSubject">Избери предмет</label>
+<select class="coolBG" id="selectSubject"></select>
+<button class="buttons" onclick="loadSchedulea()">Покажи</button>
+<button class="buttons" onclick="deleteUnSelected()">Избришти неселектирани</button>
+<button class="buttons" onclick="deleteAll()">Избришти се</button>
+<button class="buttons" onclick="saveTableAsImage()">Зачувај табела како слика</button>
+
+<label class="background" for="colorPicker">Избери боја:</label>
+<input class="colorPick" type="color" id="colorPicker" value="#00ff00">
+
+</body>
+</html>
