@@ -276,3 +276,62 @@ function chaneColor(element){
 function turnOff(element){
     element.style.display = "none";
 }
+
+function addLab(){
+    const begin = document.getElementById("begin")
+    const end = document.getElementById("end")
+    const day = document.getElementById("whichDaySelect")
+    const warn = document.getElementById("warning")
+    const text = document.getElementById("labName")
+    if(begin.value === "" || end.value === "" || text.value === ""){
+        warn.style.display = "";
+        return
+    }
+    warn.style.display = "none";
+    let parsedStart = parseInt(begin.value.split(":")[0])
+    parsedStart = parsedStart-8;
+    let parsedEndFull = end.value.split(":")
+    let parsedEnd = 0
+    if(parseInt(parsedEndFull[1],10) === 0){
+        parsedEnd = parseInt(parsedEndFull[0],10) - 9
+    }
+    else
+        parsedEnd = parseInt(parsedEndFull[0],10) - 8
+
+    addLabOnTable(parsedStart,parsedEnd,day.value,text)
+}
+function labPopup(){
+    const popup = document.getElementById("labsPopUp")
+    popup.style.display = "flex";
+}
+
+function closePopup() {
+    const popup = document.getElementById("labsPopUp")
+    popup.style.display = "none";
+}
+
+function addLabOnTable(start, end, day, text){
+    const rows = document.querySelectorAll("#Times tr");
+    let howLong = end-start
+    howLong = howLong + 1
+    for (let i = 0; i < howLong; i++) {
+        const row = rows[start+i];
+        const cell = row.cells[day];
+        const begin = document.getElementById("begin");
+        const end = document.getElementById("end");
+        const all = (text.value + " - " + begin.value + " до " + end.value);
+
+        const dontAdd = Array.from(cell.querySelectorAll("div")).some(div => div.textContent === all);
+
+        if (!dontAdd) {
+            const newDiv = document.createElement("div");
+            newDiv.textContent = text.value + " - " + begin.value + " до " + end.value;
+            newDiv.classList.add("fancy");
+
+            newDiv.onclick = function () {
+                keepOnScreen(this);
+            };
+            cell.appendChild(newDiv);
+        }
+    }
+}
