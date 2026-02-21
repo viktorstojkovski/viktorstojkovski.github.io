@@ -1,1 +1,2 @@
-# viktorstojkovski.github.io
+# Better Raspored
+A Schedule Making Website
