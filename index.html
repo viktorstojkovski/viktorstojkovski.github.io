@@ -17,7 +17,7 @@
 <button id="bgChange" onclick="bgChange()">
     <i class="fa-solid fa-moon" style="font-size: 30px; color: gray" ></i>
 </button>
-<h3 id="version" onclick="turnOff(this)">BetterRaspored 0.9</h3>
+<h3 id="version" onclick="turnOff(this)">BetterRaspored 0.9.2</h3>
 <table id="raspored">
     <thead>
         <tr>
@@ -91,6 +91,40 @@
 <button class="buttons" onclick="deleteUnSelected()">Избришти неселектирани</button>
 <button class="buttons" onclick="deleteAll()">Избришти се</button>
 <button class="buttons" onclick="saveTableAsImage()">Зачувај табела како слика</button>
+<button class="buttons" onclick="labPopup()">Додади Лабс</button>
+
+<div id="labsPopUp">
+    <div id="popup">
+        <span id="closeButton" onclick="closePopup()">x</span>
+        <h2 style="margin-top: 0">Додади Лабс</h2>
+        <div class="testing">
+            <label class="background" for="begin">Почеток</label>
+            <input type="text" id="begin" placeholder="Пример 08:00/11:00/14:30">
+        </div>
+        <div class="testing">
+            <label class="background" for="end">Крај</label>
+            <input type="text" id="end" placeholder="Пример 08:00/11:00/14:30">
+        </div>
+        <div class="testing">
+            <label class="background" id="whichDay" for="whichDaySelect">Кој ден</label>
+            <select id="whichDaySelect">
+                <option value="1">Понеделник</option>
+                <option value="2">Вторник</option>
+                <option value="3">Среда</option>
+                <option value="4">Четврток</option>
+                <option value="5">Петок</option>
+            </select>
+        </div>
+        <div class="testing">
+            <label class="background" for="labName">Името на Лабораториската</label>
+            <input type="text" id="labName" placeholder="Пример ООП - Лаб 12">
+        </div>
+        <p id="warning" style="text-align: center; margin-bottom: 0; color: darkred;display: none">Те молам пополни ги сите</p>
+        <button class="buttons" onclick="addLab()">Додади</button>
+    </div>
+</div>
+
+
 
 <label class="background" for="colorPicker">Избери боја:</label>
 <input class="colorPick" type="color" id="colorPicker" value="#00ff00">
